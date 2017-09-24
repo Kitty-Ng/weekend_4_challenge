@@ -26,8 +26,11 @@
             </div>
             <br>
             <div id="addComment">
-                    <input type="text" id="commentIn" placeholder="Add a comment" ng-model="img.comment"></input>
-                <button id="commentButton" ng-click="IC.addComment(comment)">Submit</button>
+                <input type="text" id="commentIn" placeholder="Add a comment" ng-model="img.comment"></input>
+                <button id="commentButton" ng-click="IC.addComment(img.comment , img.id)">Submit</button>
+            </div>
+            <div id="showComments" ng-repeat="comment in img.comments">
+                <p>{{ comment }}</p>
             </div>
         </article>
     </section>

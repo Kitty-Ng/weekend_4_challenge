@@ -19,7 +19,6 @@ myApp.controller ('ImageController', function($http){
     };
 
     vm.loveCounter = function (vm){
-
         $http({
             method: "PUT",
             url: '/images',
@@ -29,21 +28,19 @@ myApp.controller ('ImageController', function($http){
         })
     };
 
-    vm.addComment = function(comment){
-        var comment = {
-            comment: comment
+    vm.addComment = function(commentIn , id){
+        var newComment = {
+            id: id,
+            comment: commentIn
         };
-
-        console.log('line 37',comment);
-
-        // $http({
-        //     method: "POST",
-        //     url: '/images',
-        //     data: comment,   
-        // }).then(function(res){
-        //     console.log('new comment')
-        // })
-
+        $http({
+            method: "POST",
+            url: '/images',
+            data: newComment,   
+        }).then(function(res){
+            vm.imgArr = res.data
+            console.log('line 42',vm.imgArr);
+        })
     }
 
     vm.getPhotos();
