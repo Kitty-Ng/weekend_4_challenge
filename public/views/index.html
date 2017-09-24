@@ -13,22 +13,18 @@
 <body ng-app= "myApp">
     <h1>My Life Gallery</h1>
     <section ng-controller="ImageController as IC">
-        <table class= "table table-striped">
-            <thead>
-                <th>Image</th>
-                <th>Like this Image</th>
-            </thead>
-            <tbody>
-                <tr ng-repeat="img in IC.imgArr">
-                    <td><img ng-src={{img.imgURL}} style="height:200px; width:200px" ng-click = "IC.toggle()"></td>
-                    <td>
-                        <button>Love it!</button>
-                        <p>X people love it</p>
-                    </td>
-                </tr>
-            </tbody>
+        <div class="one" ng-repeat="img in IC.imgArr">
+            <div id= "imgDisplay" ng-click= "IC.toggle(img)">
+                <img ng-show="img.imgVisible" ng-src={{img.imgURL}}>
             </div>
-        </table>
+            <div id= "descDisplay" ng-click= "IC.toggle(img)">
+                <p ng-show="!img.imgVisible">{{ img.imgdesc }}</p>
+            </div>
+            <div id="loveCounter">
+                <button id="loveButton" ng-click="IC.loveCounter(img)">Love it!</button>
+                <p>{{img.count}} people love it</p>
+            </div>
+        </div>
     </section>
 </body>
 </html>
