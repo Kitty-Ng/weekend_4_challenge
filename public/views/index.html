@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="views/styles.css">
@@ -13,18 +14,18 @@
 <body ng-app= "myApp">
     <h1>My Life Gallery</h1>
     <section ng-controller="ImageController as IC">
-        <div class="one" ng-repeat="img in IC.imgArr">
-            <div id= "imgDisplay" ng-click= "IC.toggle(img)">
+        <article class="col-md-4" ng-repeat="img in IC.imgArr">
+            <div ng-click= "IC.toggle(img)">
                 <img ng-show="img.imgVisible" ng-src={{img.imgURL}}>
             </div>
-            <div id= "descDisplay" ng-click= "IC.toggle(img)">
-                <p ng-show="!img.imgVisible">{{ img.imgdesc }}</p>
+            <div ng-click= "IC.toggle(img)">
+                <p class="descDisplay" ng-show="!img.imgVisible">{{ img.imgdesc }}</p>
             </div>
-            <div id="loveCounter">
-                <button id="loveButton" ng-click="IC.loveCounter(img)">Love it!</button>
-                <p>{{img.count}} people love it</p>
+            <div id="buttonCounters">
+                <button id="loveButton" ng-click="IC.loveCounter(img)"><i class="em em-heart"></i> {{img.heartCount}} </button>
+                <button id="thumbsUpButton" ng-click="IC.thumbsUpCounter(img)"><i class="em em---1"></i> {{img.thumbUpCount}} </button>
             </div>
-        </div>
+        </article>
     </section>
 </body>
 </html>
