@@ -38,3 +38,15 @@ button {
     font-size: 20
 }
 
+input{
+    padding: 12px 20px;
+    font-size: 18px;
+    box-sizing: border-box;
+    
+}
+
+input:focus {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: tan;
+}

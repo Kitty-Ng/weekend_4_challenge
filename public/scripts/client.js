@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller ('ImageController', function(){
+myApp.controller ('ImageController', function($http){
     var vm = this;
 
     vm.imgArr = [
@@ -17,14 +17,22 @@ myApp.controller ('ImageController', function(){
 
     vm.toggle = function (vm){
         vm.imgVisible = !vm.imgVisible;
-    }
+    };
 
     vm.loveCounter = function (vm){
         vm.heartCount = vm.heartCount + 1
-    }
+    };
 
     vm.thumbsUpCounter = function (vm){
         vm.thumbUpCount = vm.thumbUpCount + 1
+    };
+
+    vm.addComment = function(commentIn){
+        console.log(vm);
+        var comment = {
+            comment: commentIn
+        };
     }
 
 });
+

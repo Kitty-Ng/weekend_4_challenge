@@ -25,6 +25,11 @@
                 <button id="loveButton" ng-click="IC.loveCounter(img)"><i class="em em-heart"></i> {{img.heartCount}} </button>
                 <button id="thumbsUpButton" ng-click="IC.thumbsUpCounter(img)"><i class="em em---1"></i> {{img.thumbUpCount}} </button>
             </div>
+            <br>
+            <div id="addComment">
+                    <input type="text" id="commentIn" placeholder="Add a comment" ng-model="img.comment"></input>
+                <button id="commentButton" ng-click="IC.addComment(comment)">Submit</button>
+            </div>
         </article>
     </section>
 </body>
