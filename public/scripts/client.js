@@ -5,6 +5,7 @@ myApp.controller ('ImageController', function($http){
 
     vm.imgArr = []; 
 
+    //get All Photos Array from server/ router
     vm.getPhotos = function(){
         $http({
             method: 'GET',
@@ -14,20 +15,23 @@ myApp.controller ('ImageController', function($http){
         })
     };
 
+    //toggle between image and description
     vm.toggle = function (vm){
         vm.imgVisible = !vm.imgVisible;
     };
 
-    vm.loveCounter = function (vm){
+    //update heartCount for image on server/ router
+    vm.loveCounter = function (img){
         $http({
             method: "PUT",
             url: '/images',
-            data: vm,   
+            data: img,   
         }).then(function(res){
             vm.imgArr = res.data;
-        })
+        });
     };
 
+    //add a comment
     vm.addComment = function(commentIn , id){
         var newComment = {
             id: id,
@@ -42,6 +46,7 @@ myApp.controller ('ImageController', function($http){
         })
     }
 
+    //initialize GET for all photos on load
     vm.getPhotos();
 });
 
