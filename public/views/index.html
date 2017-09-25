@@ -24,12 +24,11 @@
             <div id="buttonCounters">
                 <button id="loveButton" ng-click="IC.loveCounter(img)"><i class="em em-heart"></i> {{img.heartCount}} </button>
             </div>
-            <br>
             <div id="addComment">
                 <input type="text" id="commentIn" placeholder="Add a comment" ng-model="img.comment"></input>
                 <button id="commentButton" ng-click="IC.addComment(img.comment , img.id)">Submit</button>
             </div>
-            <div id="showComments" ng-repeat="comment in img.comments">
+            <div id="comDisplay" ng-repeat="comment in img.comments">
                 <p>{{ comment }}</p>
             </div>
         </article>

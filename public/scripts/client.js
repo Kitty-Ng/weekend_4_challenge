@@ -39,7 +39,6 @@ myApp.controller ('ImageController', function($http){
             data: newComment,   
         }).then(function(res){
             vm.imgArr = res.data
-            console.log('line 42',vm.imgArr);
         })
     }
 

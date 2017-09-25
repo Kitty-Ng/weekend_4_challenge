@@ -24,8 +24,6 @@ router.put('/',function(req,res){
 router.post('/',function(req,res){
     var dbNc= req.body.comment;
     var dbId= req.body.id;
-    console.log('router line 25',dbNc);
-    console.log('router line 28',dbId);
     imgArr[dbId].comments.push(dbNc);
     res.send(imgArr);
 });
