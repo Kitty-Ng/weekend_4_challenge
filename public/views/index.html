@@ -12,7 +12,7 @@
     <title>My Life Gallery</title>
 </head>
 <body ng-app= "myApp">
-    <h1>My Life Gallery</h1>
+    <h1 id="title">My Life Gallery</h1>
     <section ng-controller="ImageController as IC">
         <article class="col-md-4" ng-repeat="img in IC.imgArr">
             <div ng-click= "IC.toggle(img)">
@@ -21,16 +21,12 @@
             <div ng-click= "IC.toggle(img)">
                 <p class="descDisplay" ng-show="!img.imgVisible">{{ img.imgdesc }}</p>
             </div>
-            <div id="buttonCounters">
-                <button id="loveButton" ng-click="IC.loveCounter(img)"><i class="em em-heart"></i> {{img.heartCount}} </button>
+            <div>
+                <button id="loveButton" ng-click="IC.loveCounter(img)"><i class="em em-heart"></i> {{img.heartCount}} </button>     
             </div>
-            <div id="addComment">
                 <input type="text" id="commentIn" placeholder="Add a comment" ng-model="img.comment"></input>
                 <button id="commentButton" ng-click="IC.addComment(img.comment , img.id)">Submit</button>
-            </div>
-            <div id="comDisplay" ng-repeat="comment in img.comments">
-                <p>{{ comment }}</p>
-            </div>
+                <p ng-repeat="comment in img.comments">{{ comment }}</p>
         </article>
     </section>
 </body>

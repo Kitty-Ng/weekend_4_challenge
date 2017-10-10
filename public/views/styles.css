@@ -1,15 +1,17 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    color:#3e2b14;
-    background-color: tan;
+    color:black;
+    background-color: black;
     text-align: center; 
     font-size: 18px;
 }
 
+#title {
+    color: white;
+}
 img {
     height: 250px;
     width: 300px;
-    border: 15px solid #3e2b14;
     padding: 10px;
 }
 
@@ -23,8 +25,8 @@ button {
 }
 
 .col-md-4{
-    background-color: lightcyan;
-    border: 2px solid #3e2b14;
+    background-color: white;
+    border: 10px solid black;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -32,11 +34,10 @@ button {
 .descDisplay{
     height: 250px;
     width: 300px;
-    border: 15px solid #3e2b14;
     padding: 10px;
-    background-color: lightcyan;
+    background-color: white;
     margin: 0 auto;
-    font-size: 20
+    font-size: 20;
 }
 
 input{
@@ -47,5 +48,5 @@ input{
 
 input:focus {
     padding: 12px 20px;
-    background-color: tan;
+    background-color: lightblue;
 }
